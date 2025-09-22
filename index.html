@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no, email=no, address=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PP6F4RDR');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .video-container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      width: 100%;
+      display: block;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(57, 116, 255, 0.85);
+      padding: 10px;
+      gap: 10px;
+    }
+
+    .controls button {
+      background: #fff;
+      color: #3974ff;
+      border: none;
+      padding: 8px 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .controls button:hover {
+      background: #f0f0f0;
+    }
+
+    .controls select {
+      background: #fff;
+      color: #3974ff;
+      border: none;
+      padding: 6px 24px 6px 8px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      appearance: none;
+      background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%233974ff" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      background-size: 16px 16px;
+    }
+
+    .seekbar {
+      flex: 1;
+      height: 8px;
+      border-radius: 4px;
+      background: #ccc;
+      appearance: none;
+      outline: none;
+    }
+
+    .seekbar::-webkit-slider-thumb {
+      appearance: none;
+      height: 16px;
+      width: 16px;
+      background: #3974ff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .time-display {
+      color: white;
+      font-size: 14px;
+      min-width: 60px;
+      text-align: right;
+    }
+  </style>
+
+  <title>Udemyで“ストック収入”をつくる｜無料個別ロードマップ作成会</title>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PP6F4RDR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <div class="wrapper">
+
+    <div class="hero-copy">
+      <h1>
+        今、<span class="accent">Udemyが熱い！</span>
+      </h1>
+      <p>
+        講座1つで<strong>“ストック収入”</strong>をつくれる唯一のプラットフォーム。<br>
+        <span class="highlight">ブルーオーシャンの今</span>だからこそ、<br>
+        早く始めた人が圧倒的に有利です。
+      </p>
+    </div>
+
+
+
+    <!-- ▼ 1本目：なぜUdemyがすごいのか？（ゲート用） -->
+    <div class="video-container">
+      <video id="player1" muted autoplay playsinline preload="auto">
+        <source src="video/output_udemy_small.mp4" type="video/mp4">
+        お使いのブラウザでは本動画はご視聴いただけません。
+      </video>
+      <div class="controls">
+        <button id="playPauseBtn1">⏸</button>
+        <button id="rewindBtn1">⏪10s</button>
+        <button id="unmuteBtn1">🔇</button>
+        <input type="range" id="seekbar1" class="seekbar" min="0" value="0" step="0.1">
+        <div id="time-display1" class="time-display">0:00</div>
+        <div class="speed-control" style="display:flex;align-items:center;gap:8px;color:#fff;">
+          <select id="speedSelector1">
+            <option value="1" selected>1.0倍速</option>
+            <option value="1.25">1.25倍速</option>
+            <option value="1.5">1.5倍速</option>
+            <option value="1.75">1.75倍速</option>
+            <option value="2">2.0倍速</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- ▲ 1本目 -->
+
+ 
+    <div class="tbox1 t_600 ac">
+      <p>この動画を<strong>5分以上</strong>視聴いただいた方限定で、<br>Udemyマーケティングの全てをお伝えします<br>↓↓↓</p>
+    </div>
+
+    <!-- ▼ 5分後に開くエリア -->
+    <div id="hidden-content" style="display:none;">
+      <!-- 2本目：個別ロードマップ作成会のVSL（暫定で同じ動画） -->
+      <h2 class="t_white">個別ロードマップ作成会のVSL動画</h2>
+      <div class="video-container" style="margin-bottom:24px;">
+        <video id="player2" playsinline preload="metadata">
+          <source src="video/output_roadmap_small.mp4" type="video/mp4">
+          お使いのブラウザでは本動画はご視聴いただけません。
+        </video>
+        <div class="controls">
+          <button id="playPauseBtn2">▶️</button>
+          <button id="rewindBtn2">⏪10s</button>
+          <button id="unmuteBtn2">🔇</button>
+          <input type="range" id="seekbar2" class="seekbar" min="0" value="0" step="0.1">
+          <div id="time-display2" class="time-display">0:00</div>
+          <div class="speed-control" style="display:flex;align-items:center;gap:8px;color:#fff;">
+            <select id="speedSelector2">
+              <option value="1" selected>1.0倍速</option>
+              <option value="1.25">1.25倍速</option>
+              <option value="1.5">1.5倍速</option>
+              <option value="1.75">1.75倍速</option>
+              <option value="2">2.0倍速</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA差し替え -->
+      <div class="tbox1 t_red t_600 ac">
+        <p>＼毎月5名様限定！／<br>無料個別ロードマップ作成会に申し込む（無理な勧誘は一切ありません）</p>
+      </div>
+      <div class="btn">
+        <a href="https://utage-system.com/event/NPzCS44Z9vwR/register" aria-label="無料個別ロードマップ作成会に申し込む">
+          <img src="img/btn1.png" alt="">
+        </a>
+      </div>
+
+      <!-- セクション１：無料個別ロードマップ作成会で分かること -->
+      <h2 class="t_white">無料個別ロードマップ作成会で分かること</h2>
+      <div class="ul_box t_600">
+        <ul class="w_fit">
+          <li>Udemyマーケの攻略法</li>
+          <li>最短1ヶ月で50万以上稼ぐ戦略設計</li>
+          <li>小リストで数百万円の収益を上げるロードマップ</li>
+          <li>あなたに最適なジャンル選定</li>
+          <li>少ないリスクで利益を最大化する方法</li>
+          <li>個別相談への集客方法</li>
+          <li>ゼロからファンを増やす方法の理解</li>
+        </ul>
+      </div>
+
+      <!-- セクション２：体験談/ベネフィット訴求（文章差し替え） -->
+      <h2 class="t_white">Udemyで収入も人生も激変</h2>
+      <div class="ibox">
+        <p class="t_14 t_600" style="padding:12px;">
+          好きな時に行ってみたい場所に行ける人生を。<br>
+          私はUdemyマーケに出会って収入も人生も激変しました。<br>
+          自分が行ってみたい国に好きなタイミングで行けたり、今は毎月のように海外旅行に行ってます。<br><br>
+          オンライン講座制作は、あなたの人生を豊かにしてくれます。<br>
+          それでは個別相談でお会いしましょう！
+        </p>
+      </div>
+
+      <!-- セクション３：オススメする方 -->
+      <h2 class="t_white">個別ロードマップ作成会をオススメする方</h2>
+      <div class="ul_box t_600">
+        <ul class="w_fit">
+          <li>集客活動をせずに収益を最大化したい</li>
+          <li>SNSが大変すぎて挫折したことがある</li>
+          <li>フォロワーが増えても収益に繋がらない</li>
+          <li>顧客の熱量が低くて労力だけ掛かる</li>
+          <li>ファンがどんどん増える戦略設計を知りたい</li>
+          <li>ライバル競争で疲弊せず収益を安定させたい</li>
+          <li>少ないリスト数でも月100万円以上を狙いたい</li>
+          <li>最短1ヶ月で月50万円以上の達成方法を知りたい</li>
+          <li>人の役に立てる専門知識はあるが売り方が分からない</li>
+          <li>時間的・経済的自由を手に入れて人生をデザインしたい</li>
+        </ul>
+      </div>
+
+      <!-- セクション４：対象外 -->
+      <h2 class="t_white">対象外となる方</h2>
+      <div class="ul_box t_600">
+        <ul class="w_fit">
+          <li>とにかくラクしたい・何もしたくない方</li>
+          <li>受け身で学ぶ意志が無い方</li>
+          <li>勉強やアドバイスを受ける気が無い方</li>
+          <li>必要なことを後回しにする癖がある方</li>
+          <li>時間や予定など約束を破る癖がある方</li>
+          <li>「とりあえず枠だけ取る」程度の気持ちの方</li>
+        </ul>
+      </div>
+      <div class="tbox1 t_600 ac">
+        <p>これらに当てはまる方はセッションのお申し込みをご遠慮ください。<br>わたしのノウハウではお役に立つことができません。</p>
+      </div>
+
+      <!-- 末尾CTA繰り返し -->
+      <div class="tbox1 t_red t_600 ac">
+        <p>＼毎月5名様限定！／<br>無料個別ロードマップ作成会に申し込む（無理な勧誘は一切ありません）</p>
+      </div>
+      <div class="btn">
+        <a href="https://utage-system.com/event/NPzCS44Z9vwR/register" aria-label="無料個別ロードマップ作成会に申し込む">
+          <img src="img/btn1.png" alt="">
+        </a>
+      </div>
+
+      <!-- 既存のプロフィールや実績画像は残す場合はここに -->
+      <!--
+      <h2 class="t_white">講師プロフィール</h2>
+      ...（必要なら差し替え）
+      -->
+    </div>
+    <!-- ▲ 5分後に開くエリア -->
+  </div>
+
+  <script>
+    // 共通：mm:ss
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
+    function setupPlayer(prefix, options = {}) {
+      const video = document.getElementById(`player${prefix}`);
+      const playPauseBtn = document.getElementById(`playPauseBtn${prefix}`);
+      const rewindBtn = document.getElementById(`rewindBtn${prefix}`);
+      const unmuteBtn = document.getElementById(`unmuteBtn${prefix}`);
+      const seekbar = document.getElementById(`seekbar${prefix}`);
+      const timeDisplay = document.getElementById(`time-display${prefix}`);
+      const speedSelector = document.getElementById(`speedSelector${prefix}`);
+
+      let lastTime = 0;
+
+      playPauseBtn.addEventListener('click', () => {
+        if (video.paused) { video.play(); playPauseBtn.textContent = '⏸'; }
+        else { video.pause(); playPauseBtn.textContent = '▶️'; }
+      });
+      unmuteBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        unmuteBtn.textContent = video.muted ? '🔇' : '🔊';
+      });
+      rewindBtn.addEventListener('click', () => {
+        video.currentTime = Math.max(0, video.currentTime - 10);
+      });
+      seekbar.addEventListener('input', () => {
+        const allowSkip = options.allowSkip ?? false;
+        if (allowSkip || parseFloat(seekbar.value) <= lastTime + 0.5) {
+          video.currentTime = seekbar.value;
+        } else {
+          seekbar.value = lastTime;
+        }
+      });
+      speedSelector.addEventListener('change', () => {
+        video.playbackRate = parseFloat(speedSelector.value);
+      });
+      video.addEventListener('timeupdate', () => {
+        seekbar.max = video.duration || 0;
+        seekbar.value = video.currentTime || 0;
+        timeDisplay.textContent = formatTime(video.currentTime || 0);
+        lastTime = video.currentTime || 0;
+
+        // 1本目のみ：300秒（5分）で解放
+        if (options.isGateDriver && !window.__gateShown && video.currentTime >= 300) {
+          const hiddenContent = document.getElementById('hidden-content');
+          if (hiddenContent) {
+            hiddenContent.style.display = 'block';
+            window.__gateShown = true;
+          }
+        }
+      });
+      video.addEventListener('seeking', () => {
+        const allowSkip = options.allowSkip ?? false;
+        if (!allowSkip && video.currentTime > lastTime + 0.5) {
+          video.currentTime = lastTime;
+        }
+      });
+      return video;
+    }
+
+    window.__gateShown = false;
+    // 1本目：ゲート制御 + 早送り防止
+    const v1 = setupPlayer('1', { isGateDriver: true, allowSkip: false });
+    // 2本目：ユーザビリティ優先でシーク可
+    const v2 = setupPlayer('2', { allowSkip: true });
+  </script>
+</body>
+
+</html>
