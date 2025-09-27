@@ -256,7 +256,7 @@
       <div class="tbox1 t_red t_600 ac">
         <p>＼毎月5名様限定！／<br>無料個別ロードマップ作成会に申し込む</p>
       </div>
-      
+
       <div class="cta-wrap">
         <a class="cta-pill" href="https://utage-system.com/event/NPzCS44Z9vwR/register" aria-label="個別ロードマップ作成会に申し込む">
           <span class="cta-text">個別ロードマップ作成会に申し込む</span>
@@ -316,7 +316,7 @@
         lastTime = video.currentTime || 0;
 
         // 1本目のみ：300秒（5分）で解放
-        if (options.isGateDriver && !window.__gateShown && video.currentTime >= 4) {
+        if (options.isGateDriver && !window.__gateShown && video.currentTime >= 300) {
           const hiddenContent = document.getElementById('hidden-content');
           if (hiddenContent) {
             hiddenContent.style.display = 'block';
