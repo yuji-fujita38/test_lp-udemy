@@ -129,7 +129,6 @@
       </video>
       <div class="controls">
         <button id="playPauseBtn1">⏸</button>
-        <button id="rewindBtn1">⏪10s</button>
         <button id="unmuteBtn1">🔇</button>
         <input type="range" id="seekbar1" class="seekbar" min="0" value="0" step="0.1">
         <div id="time-display1" class="time-display">0:00</div>
@@ -146,7 +145,7 @@
     </div>
     <!-- ▲ 1本目 -->
 
- 
+
     <div class="tbox1 t_600 ac">
       <p>この動画を<strong>5分以上</strong>視聴いただいた方限定で、<br>Udemyマーケティングの全てをお伝えします<br>↓↓↓</p>
     </div>
@@ -162,7 +161,6 @@
         </video>
         <div class="controls">
           <button id="playPauseBtn2">▶️</button>
-          <button id="rewindBtn2">⏪10s</button>
           <button id="unmuteBtn2">🔇</button>
           <input type="range" id="seekbar2" class="seekbar" min="0" value="0" step="0.1">
           <div id="time-display2" class="time-display">0:00</div>
@@ -178,15 +176,20 @@
         </div>
       </div>
 
-      <!-- CTA差し替え -->
       <div class="tbox1 t_red t_600 ac">
-        <p>＼毎月5名様限定！／<br>無料個別ロードマップ作成会に申し込む（無理な勧誘は一切ありません）</p>
+        <p>＼毎月5名様限定！／<br>無料個別ロードマップ作成会に申し込む</p>
       </div>
-      <div class="btn">
-        <a href="https://utage-system.com/event/NPzCS44Z9vwR/register" aria-label="無料個別ロードマップ作成会に申し込む">
-          <img src="img/btn1.png" alt="">
+
+      <div class="cta-wrap">
+        <a class="cta-pill" href="https://utage-system.com/event/NPzCS44Z9vwR/register" aria-label="個別ロードマップ作成会に申し込む">
+          <span class="cta-text">個別ロードマップ作成会に申し込む</span>
+          <span class="cta-play" aria-hidden="true">▶</span>
         </a>
       </div>
+
+      <p class="ac" style="color:#ff0000; font-weight:600; margin-top:8px;">
+        （無理な勧誘は一切ありません）
+      </p>
 
       <!-- セクション１：無料個別ロードマップ作成会で分かること -->
       <h2 class="t_white">無料個別ロードマップ作成会で分かること</h2>
@@ -204,6 +207,9 @@
 
       <!-- セクション２：体験談/ベネフィット訴求（文章差し替え） -->
       <h2 class="t_white">Udemyで収入も人生も激変</h2>
+      <div class="center-image-wrap">
+        <img src="img/life-change.png" alt="Udemyで人生が変わった" style="max-width:80%; ">
+      </div>
       <div class="ibox">
         <p class="t_14 t_600" style="padding:12px;">
           好きな時に行ってみたい場所に行ける人生を。<br>
@@ -247,21 +253,22 @@
         <p>これらに当てはまる方はセッションのお申し込みをご遠慮ください。<br>わたしのノウハウではお役に立つことができません。</p>
       </div>
 
-      <!-- 末尾CTA繰り返し -->
       <div class="tbox1 t_red t_600 ac">
-        <p>＼毎月5名様限定！／<br>無料個別ロードマップ作成会に申し込む（無理な勧誘は一切ありません）</p>
+        <p>＼毎月5名様限定！／<br>無料個別ロードマップ作成会に申し込む</p>
       </div>
-      <div class="btn">
-        <a href="https://utage-system.com/event/NPzCS44Z9vwR/register" aria-label="無料個別ロードマップ作成会に申し込む">
-          <img src="img/btn1.png" alt="">
+      
+      <div class="cta-wrap">
+        <a class="cta-pill" href="https://utage-system.com/event/NPzCS44Z9vwR/register" aria-label="個別ロードマップ作成会に申し込む">
+          <span class="cta-text">個別ロードマップ作成会に申し込む</span>
+          <span class="cta-play" aria-hidden="true">▶</span>
         </a>
       </div>
+      <p class="ac" style="color:#ff0000; font-weight:600; margin-top:8px;">
+        （無理な勧誘は一切ありません）
+      </p>
 
-      <!-- 既存のプロフィールや実績画像は残す場合はここに -->
-      <!--
-      <h2 class="t_white">講師プロフィール</h2>
-      ...（必要なら差し替え）
-      -->
+
+
     </div>
     <!-- ▲ 5分後に開くエリア -->
   </div>
@@ -276,7 +283,6 @@
     function setupPlayer(prefix, options = {}) {
       const video = document.getElementById(`player${prefix}`);
       const playPauseBtn = document.getElementById(`playPauseBtn${prefix}`);
-      const rewindBtn = document.getElementById(`rewindBtn${prefix}`);
       const unmuteBtn = document.getElementById(`unmuteBtn${prefix}`);
       const seekbar = document.getElementById(`seekbar${prefix}`);
       const timeDisplay = document.getElementById(`time-display${prefix}`);
@@ -291,9 +297,6 @@
       unmuteBtn.addEventListener('click', () => {
         video.muted = !video.muted;
         unmuteBtn.textContent = video.muted ? '🔇' : '🔊';
-      });
-      rewindBtn.addEventListener('click', () => {
-        video.currentTime = Math.max(0, video.currentTime - 10);
       });
       seekbar.addEventListener('input', () => {
         const allowSkip = options.allowSkip ?? false;
@@ -313,7 +316,7 @@
         lastTime = video.currentTime || 0;
 
         // 1本目のみ：300秒（5分）で解放
-        if (options.isGateDriver && !window.__gateShown && video.currentTime >= 300) {
+        if (options.isGateDriver && !window.__gateShown && video.currentTime >= 4) {
           const hiddenContent = document.getElementById('hidden-content');
           if (hiddenContent) {
             hiddenContent.style.display = 'block';
